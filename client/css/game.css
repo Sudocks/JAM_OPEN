@@ -1,0 +1,6 @@
+#background {
+    position: relative;
+    z-index: -1;
+    top: -50px;
+    transform: scaleX(1) scaleY(0.9);
+}
