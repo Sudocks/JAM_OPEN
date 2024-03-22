@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeu Web</title>
+    <style>
+        #resultat {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue sur notre jeu web!</h1>
+    <p>Cliquez sur le bouton pour générer un nombre aléatoire entre 1 et 10.</p>
+    <button onclick="jouer()">Jouer</button>
+    <div id="resultat"></div>
+
+    <script>
+        function jouer() {
+            var nombre = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('resultat').innerHTML = 'Votre nombre est: ' + nombre;
+        }
+    </script>
+</body>
+</html>
