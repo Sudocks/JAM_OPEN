@@ -1,0 +1,21 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#bouton-play {
+    position: relative;
+    top: 80px;
+    left: 390px;
+    scale: 0.5;
+}
