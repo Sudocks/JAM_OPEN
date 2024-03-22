@@ -1,6 +1,32 @@
 #background {
     position: relative;
     z-index: -1;
-    top: -50px;
+    padding: 0px;
+    top: -420px;
     transform: scaleX(1) scaleY(0.9);
+}
+
+#Score {
+    position: relative;
+    z-index: 2;
+    left: 100px;
+    padding: 0px;
+    color: rgb(238, 181, 76);
+    font-size: 50px;
+    font-family: 'GamePolice';
+}
+
+#gate1 {
+    position: relative;
+    z-index: 1;
+    top: 230px;
+    left: 1470px;
+    scale: 2.5;
+    padding: 0px;
+    color: rgb(238, 181, 76);
+}
+
+@font-face {
+    font-family: 'GamePolice';
+    src: url('../img/Super Bloom Personal Use.ttf') format('truetype');
 }
