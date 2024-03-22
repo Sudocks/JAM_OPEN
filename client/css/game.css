@@ -1,9 +1,10 @@
 #background {
     position: relative;
-    z-index: -1;
+    z-index: -2;
+    left: -100px;
     padding: 0px;
-    top: -420px;
-    transform: scaleX(1) scaleY(0.9);
+    top: -500px;
+    transform: scaleX(1.1);
 }
 
 #Score {
@@ -19,11 +20,28 @@
 #gate1 {
     position: relative;
     z-index: 1;
-    top: 230px;
-    left: 1470px;
+    top: 430px;
+    left: 1100px;
     scale: 2.5;
     padding: 0px;
-    color: rgb(238, 181, 76);
+}
+
+#gate2 {
+    position: relative;
+    z-index: 1;
+    top: 430px;
+    left: 800px;
+    scale: 2.5;
+    padding: 0px;
+}
+
+#gate3 {
+    position: relative;
+    z-index: 1;
+    top: 500px;
+    left: 1100px;
+    scale: 2.5;
+    padding: 0px;
 }
 
 @font-face {
