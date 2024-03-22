@@ -3,22 +3,42 @@
 <head>
     <title>Jeu Web</title>
     <style>
-        #resultat {
-            font-size: 2em;
+        /* Styles pour le menu */
+        .menu {
+            display: flex;
+            justify-content: space-around;
             margin-top: 20px;
+        }
+
+        .menu button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Bienvenue sur notre jeu web!</h1>
-    <p>Cliquez sur le bouton pour générer un nombre aléatoire entre 1 et 10.</p>
-    <button onclick="jouer()">Jouer</button>
-    <div id="resultat"></div>
+    <div class="menu">
+        <button onclick="jouer()">Jouer</button>
+        <button onclick="ouvrirParametres()">Paramètres</button>
+        <button onclick="quitter()">Quitter</button>
+    </div>
 
     <script>
         function jouer() {
-            var nombre = Math.floor(Math.random() * 10) + 1;
-            document.getElementById('resultat').innerHTML = 'Votre nombre est: ' + nombre;
+            // Ajoutez ici le code pour démarrer le jeu
+            alert('Jouer');
+        }
+
+        function ouvrirParametres() {
+            // Ajoutez ici le code pour ouvrir les paramètres
+            alert('Paramètres');
+        }
+
+        function quitter() {
+            // Ajoutez ici le code pour quitter le jeu
+            alert('Quitter');
         }
     </script>
 </body>
