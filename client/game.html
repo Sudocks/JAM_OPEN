@@ -6,9 +6,69 @@
     <link rel="icon" href="https://imgur.com/KJZfdOa.png" type="image/x-icon">
 </head>
 <body>
-    <p id="Score">Score : <span>100</span></p>
-    <img id="gate1" src="./img/gateclose.png" alt="Image du back (ERR)">
-    <img id="gate2" src="./img/gateclose.png" alt="Image du back (ERR)">
-    <img id="gate3" src="./img/gateclose.png" alt="Image du back (ERR)">
+    <p id="Level">Niveau : <span id="level">1</span></p>
+    <p id="Question">Question</p>
+    <img id="gate1" src="./img/gateclose1.png" alt="Image du back (ERR)" onclick="checkDoor(1)">
+    <img id="gate2" src="./img/gateclose2.png" alt="Image du back (ERR)" onclick="checkDoor(2)">
+    <img id="gate3" src="./img/gateclose3.png" alt="Image du back (ERR)" onclick="checkDoor(3)">
     <img id="background" src="./img/game.png" alt="Image du back (ERR)">
+    
+    <script>
+        let level = 1;
+        let questionIndex = 0;
+        let questions = [
+            "Quelle est la capitale de la France ?",
+            "(8 + 3) × 2 - 5 = ?",
+            "Combien de continents y a-t-il sur Terre ?",
+            "Quel est le monument emblématique de Paris qui attire des millions de visiteurs chaque année ?",
+            "(15 - 6) × (4 ÷ 2) + 3 = ?",
+            "Quelle est l'estimation actuelle du nombre de personnes dans le monde ?",
+            "Bravo tu as gagné !"
+        ];
+
+        function chooseQuestion() {
+            return questions[questionIndex];
+        }
+
+        function chooseCorrectDoor() {
+            if (level === 1) {
+                return 2;
+            } 
+            if (level === 2) {
+                return 1;
+            }
+            if (level === 3) {
+                return 2;
+            }
+            if (level === 4) {
+                return 1;
+            }
+            if (level === 5) {
+                return 3;
+            }
+            if (level === 6) {
+                return 3;
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+
+        function updateLevelAndQuestion() {
+            document.getElementById('level').innerText = level;
+            document.getElementById('Question').innerText = chooseQuestion();
+        }
+
+        function checkDoor(doorNumber) {
+            if (doorNumber === chooseCorrectDoor()) {
+                level += 1;
+                questionIndex += 1;
+                updateLevelAndQuestion();
+            } else {
+                window.location.href = "index.html";  // au lieu de le tp a index faudrait faire une nouvelle page avec la défaite et 2 boutons (recommencer, menu)
+            }
+        }
+
+        updateLevelAndQuestion();
+    </script>
 </body>
+</html>

@@ -3,24 +3,34 @@
     z-index: -2;
     left: -100px;
     padding: 0px;
-    top: -500px;
+    top: -530px;
     transform: scaleX(1.1);
 }
 
-#Score {
+#Level {
     position: relative;
     z-index: 2;
     left: 100px;
     padding: 0px;
     color: rgb(238, 181, 76);
+    font-size: 35px;
+}
+
+#Question {
+    text-align: center;
     font-size: 50px;
-    font-family: 'GamePolice';
+    margin-top: 20px;
+    /*font-family: 'GamePolice';   #IL FAUT CHANGER DE POLICE CAR MA POLICE NE SUPPORTE PAS TOUS LES CHIFFRES      */ 
+}
+
+.door {
+    cursor: pointer;
 }
 
 #gate1 {
     position: relative;
     z-index: 1;
-    top: 430px;
+    top: 390px;
     left: 1100px;
     scale: 2.5;
     padding: 0px;
@@ -29,8 +39,8 @@
 #gate2 {
     position: relative;
     z-index: 1;
-    top: 430px;
-    left: 800px;
+    top: 390px;
+    left: 650px;
     scale: 2.5;
     padding: 0px;
 }
@@ -38,8 +48,8 @@
 #gate3 {
     position: relative;
     z-index: 1;
-    top: 500px;
-    left: 1100px;
+    top: 390px;
+    left: 200px;
     scale: 2.5;
     padding: 0px;
 }
