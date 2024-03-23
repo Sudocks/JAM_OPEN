@@ -1,20 +1,16 @@
-const buttons = document.querySelectorAll('.color-slide');
+var audio = document.getElementById("myAudio");
+var muteButton = document.getElementById("muteButton");
 
-buttons.forEach(button => {
-  button.addEventListener('mouseover', () => {
-    button.style.backgroundColor = getRandomColor();
-  });
-  
-  button.addEventListener('mouseleave', () => {
-    button.style.backgroundColor = '#3498db'; // Réinitialisation de la couleur de base au survol
-  });
+muteButton.addEventListener("click", function() {
+    toggleMute();
 });
 
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+function toggleMute() {
+    if (audio.muted) {
+        audio.muted = false;
+        muteButton.innerHTML = "Mute";
+    } else {
+        audio.muted = true;
+        muteButton.innerHTML = "Unmute";
+    }
 }
