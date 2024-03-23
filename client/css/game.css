@@ -1,26 +1,30 @@
 #background {
-    position: relative;
+    position: fixed;
     z-index: -2;
-    left: -100px;
-    padding: 0px;
-    top: -530px;
+    left: 0;
+    top: 0;
+    width: 100vw; /* Utilisation de vw (viewport width) */
+    height: 100vh; /* Utilisation de vh (viewport height) */
     transform: scaleX(1.1);
 }
 
 #Level {
-    position: relative;
+    position: fixed;
     z-index: 2;
-    left: 100px;
+    left: 5vw; /* Utilisation de vw (viewport width) */
+    top: 5vh; /* Utilisation de vh (viewport height) */
     padding: 0px;
     color: rgb(238, 181, 76);
-    font-size: 35px;
+    font-size: 3vw; /* Utilisation de vw (viewport width) */
 }
 
 #Question {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
     text-align: center;
-    font-size: 50px;
-    margin-top: 20px;
-    /*font-family: 'GamePolice';   #IL FAUT CHANGER DE POLICE CAR MA POLICE NE SUPPORTE PAS TOUS LES CHIFFRES      */ 
+    font-size: 4vh;
+    margin-top: 2vh;
 }
 
 .door {
