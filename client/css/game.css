@@ -3,19 +3,43 @@
     z-index: -2;
     left: 0;
     top: 0;
-    width: 100vw; /* Utilisation de vw (viewport width) */
-    height: 100vh; /* Utilisation de vh (viewport height) */
+    width: 100vw;
+    height: 100vh;
     transform: scaleX(1.1);
 }
 
 #Level {
     position: fixed;
     z-index: 2;
-    left: 5vw; /* Utilisation de vw (viewport width) */
-    top: 5vh; /* Utilisation de vh (viewport height) */
+    left: 800px; 
+    top: 650px;
     padding: 0px;
-    color: rgb(238, 181, 76);
-    font-size: 3vw; /* Utilisation de vw (viewport width) */
+    color: rgb(56, 56, 56);
+    font-size: 3vw;
+    font-family: 'GamePolice';
+}
+
+#Timer {
+    position: fixed;
+    z-index: 2;
+    left: 125px; 
+    top: 80px;
+    padding: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 45px;
+    font-family: 'GamePolice';
+}
+
+#chrono {
+    position: fixed;
+    z-index: 2;
+    left: -180px;
+    scale: 1.2; 
+    top: -55px;
+    padding: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 45px;
+    font-family: 'GamePolice';
 }
 
 #Question {
@@ -25,6 +49,9 @@
     text-align: center;
     font-size: 4vh;
     margin-top: 2vh;
+    color: rgb(56, 56, 56);
+    font-size: 55px;
+    font-family: 'GamePolice';
 }
 
 #gate1 {
@@ -70,5 +97,5 @@
 
 @font-face {
     font-family: 'GamePolice';
-    src: url('../img/Super Bloom Personal Use.ttf') format('truetype');
+    src: url('../img/Copyduck.ttf') format('truetype');
 }

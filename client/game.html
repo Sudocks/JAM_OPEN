@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Jeu de Porte</title>
+    <title>Open the door | Jeu</title>
     <link type="text/css" rel="stylesheet" href="css/game.css" />
     <link rel="icon" href="https://imgur.com/KJZfdOa.png" type="image/x-icon">
 </head>
 <body>
     <p id="Level">Niveau : <span id="level">1</span></p>
     <p id="Question">Question</p>
+    <p id="Timer"><span id="countdown">10</span></p>
     <img id="gate1" src="./img/gates/gate1_1.png" alt="Image du back (ERR)" onclick="checkDoor(1)">
     <img id="gate2" src="./img/gates/gate2_1.png" alt="Image du back (ERR)" onclick="checkDoor(2)">
     <img id="gate3" src="././img/gates/gate3_1.png" alt="Image du back (ERR)" onclick="checkDoor(3)">
     <img id="background" src="./img/game.png" alt="Image du back (ERR)">
-    
+    <img id="chrono" src="./img/chrono.png" alt="Image du back (ERR)">
     <script>
         let level = 1;
         let questionIndex = 0;
+        let countdown = 10;
+        let countdownInterval;
         let questions = [
             "Quelle est la capitale de la France ?",
             "(8 + 3) × 2 - 5 = ?",
@@ -47,7 +50,7 @@
                 return 3;
             }
             if (level === 6) {
-                return 2;
+                return 3;
             } else {
                 window.location.href = "index.html";
             }
@@ -59,7 +62,7 @@
             document.getElementById('gate1').src = `./img/gates/gate1_${level}.png`;
             document.getElementById('gate2').src = `./img/gates/gate2_${level}.png`;
             document.getElementById('gate3').src = `./img/gates/gate3_${level}.png`;
-            
+            resetTimer();
 }
 
         function checkDoor(doorNumber) {
@@ -73,6 +76,26 @@
             } else {
                 window.location.href = "defeat.html";
             }
+        }
+
+        function startTimer() {
+            countdownInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            countdown -= 1;
+            document.getElementById('countdown').innerText = countdown;
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "defeat.html";
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(countdownInterval);
+            countdown = 10;
+            document.getElementById('countdown').innerText = countdown;
+            startTimer();
         }
 
         updateLevelAndQuestion();
