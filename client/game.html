@@ -26,6 +26,9 @@
             "Quel est le monument emblématique de Paris qui attire des millions de visiteurs chaque année ?",
             "(15 - 6) × (4 ÷ 2) + 3 = ?",
             "Quelle est l'estimation actuelle du nombre de personnes dans le monde ?",
+            "Combien de défaites Conor McGregor présente ?",
+            "(10 x 2) + (11 x 2) = ?",
+            "Quelle est la capitale du Portugal ?",
             "Bravo tu as gagné !"
         ];
 
@@ -35,7 +38,7 @@
 
         function chooseCorrectDoor() {
             if (level === 1) {
-                return 1;
+                return 3;
             } 
             if (level === 2) {
                 return 3;
@@ -51,6 +54,13 @@
             }
             if (level === 6) {
                 return 3;
+            } if (level === 7) {
+                return 2;
+            }if (level === 8) {
+                return 2;
+            } 
+            if (level === 9) {
+                return 1;
             } else {
                 window.location.href = "index.html";
             }
@@ -70,7 +80,7 @@
                 level += 1;
                 questionIndex += 1;
                 updateLevelAndQuestion();
-                if (level == 7) {
+                if (level == 10) {
                     window.location.href = "win.html";
                 }
             } else {
