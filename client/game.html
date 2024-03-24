@@ -8,9 +8,9 @@
 <body>
     <p id="Level">Niveau : <span id="level">1</span></p>
     <p id="Question">Question</p>
-    <img id="gate1" src="./img/gateclose1.png" alt="Image du back (ERR)" onclick="checkDoor(1)">
-    <img id="gate2" src="./img/gateclose2.png" alt="Image du back (ERR)" onclick="checkDoor(2)">
-    <img id="gate3" src="./img/gateclose3.png" alt="Image du back (ERR)" onclick="checkDoor(3)">
+    <img id="gate1" src="./img/gates/gate1_1.png" alt="Image du back (ERR)" onclick="checkDoor(1)">
+    <img id="gate2" src="./img/gates/gate2_1.png" alt="Image du back (ERR)" onclick="checkDoor(2)">
+    <img id="gate3" src="././img/gates/gate3_1.png" alt="Image du back (ERR)" onclick="checkDoor(3)">
     <img id="background" src="./img/game.png" alt="Image du back (ERR)">
     
     <script>
@@ -32,22 +32,22 @@
 
         function chooseCorrectDoor() {
             if (level === 1) {
-                return 2;
+                return 1;
             } 
             if (level === 2) {
-                return 1;
+                return 3;
             }
             if (level === 3) {
-                return 2;
+                return 1;
             }
             if (level === 4) {
-                return 1;
+                return 2;
             }
             if (level === 5) {
                 return 3;
             }
             if (level === 6) {
-                return 3;
+                return 2;
             } else {
                 window.location.href = "index.html";
             }
@@ -56,15 +56,22 @@
         function updateLevelAndQuestion() {
             document.getElementById('level').innerText = level;
             document.getElementById('Question').innerText = chooseQuestion();
-        }
+            document.getElementById('gate1').src = `./img/gates/gate1_${level}.png`;
+            document.getElementById('gate2').src = `./img/gates/gate2_${level}.png`;
+            document.getElementById('gate3').src = `./img/gates/gate3_${level}.png`;
+            
+}
 
         function checkDoor(doorNumber) {
             if (doorNumber === chooseCorrectDoor()) {
                 level += 1;
                 questionIndex += 1;
                 updateLevelAndQuestion();
+                if (level == 7) {
+                    window.location.href = "win.html";
+                }
             } else {
-                window.location.href = "defeat.html";  // au lieu de le tp a index faudrait faire une nouvelle page avec la défaite et 2 boutons (recommencer, menu)
+                window.location.href = "defeat.html";
             }
         }
 

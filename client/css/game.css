@@ -27,35 +27,45 @@
     margin-top: 2vh;
 }
 
+#gate1 {
+    position: fixed;
+    z-index: 1;
+    left: 25%;
+    bottom: 35%;
+    transform: scale(1.5); 
+    margin-right: 20px; 
+}
+
+#gate2 {
+    position: fixed;
+    z-index: 1;
+    left: 52%;
+    bottom: 35%;
+    transform: scale(1.5);
+    margin-right: 20px;
+}
+
+#gate3 {
+    position: fixed;
+    z-index: 1;
+    left: 80%;
+    bottom: 35%;
+    transform: scale(1.5);
+    margin-right: 20px;
+}
+
 .door {
     cursor: pointer;
 }
 
-#gate1 {
-    position: relative;
-    z-index: 1;
-    top: 390px;
-    left: 1100px;
-    scale: 2.5;
-    padding: 0px;
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 120vh;
 }
 
-#gate2 {
-    position: relative;
-    z-index: 1;
-    top: 390px;
-    left: 650px;
-    scale: 2.5;
-    padding: 0px;
-}
-
-#gate3 {
-    position: relative;
-    z-index: 1;
-    top: 390px;
-    left: 200px;
-    scale: 2.5;
-    padding: 0px;
+#gate1, #gate2, #gate3 {
+    margin-right: 20px;
 }
 
 @font-face {
