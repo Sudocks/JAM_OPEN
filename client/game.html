@@ -75,19 +75,30 @@
             resetTimer();
 }
 
-        function checkDoor(doorNumber) {
-            if (doorNumber === chooseCorrectDoor()) {
-                level += 1;
-                questionIndex += 1;
-                updateLevelAndQuestion();
-                if (level == 10) {
-                    window.location.href = "win.html";
-                }
-            } else {
-                window.location.href = "defeat.html";
-            }
-        }
+function checkDoor(doorNumber) {
+    if (doorNumber === chooseCorrectDoor()) {
+        let goodImage = document.createElement("img");
+        goodImage.src = "./img/good.png";
+        goodImage.style.position = "fixed";
+        goodImage.style.top = "50%";
+        goodImage.style.left = "50%";
+        goodImage.style.transform = "translate(-50%, -50%)";
+        goodImage.style.zIndex = "9999";
+        document.body.appendChild(goodImage);
 
+        setTimeout(() => {
+            document.body.removeChild(goodImage);
+            level += 1;
+            questionIndex += 1;
+            updateLevelAndQuestion();
+            if (level == 10) {
+                window.location.href = "win.html";
+            }
+        }, 1000);
+    } else {
+        window.location.href = "defeat.html";
+    }
+}
         function startTimer() {
             countdownInterval = setInterval(updateTimer, 1000);
         }
